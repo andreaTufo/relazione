@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{\PYGZbs{}}\PYG{n}{sffamily}
+\PYG{n}{ConnectionFactory} \PYG{n}{factory} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ConnectionFactory}\PYG{p}{();}
+\PYG{n}{factory}\PYG{p}{.}\PYG{n+na}{setHost}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}localhost\PYGZdq{}}\PYG{p}{);}
+\PYG{k}{try} \PYG{p}{(}\PYG{n}{Connection} \PYG{n}{connection} \PYG{o}{=} \PYG{n}{factory}\PYG{p}{.}\PYG{n+na}{newConnection}\PYG{p}{();}
+     \PYG{n}{Channel} \PYG{n}{channel} \PYG{o}{=} \PYG{n}{connection}\PYG{p}{.}\PYG{n+na}{createChannel}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
