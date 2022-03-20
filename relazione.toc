@@ -20,7 +20,15 @@
 \contentsline {section}{\numberline {3.4} \sffamily Personas e requisiti}{16}%
 \contentsline {chapter}{\numberline {4} \sffamily Integrazione del sistema}{17}%
 \contentsline {section}{\numberline {4.1}\sffamily Configurazione di Traccar in NGNIX}{17}%
-\contentsline {section}{\numberline {4.2}\sffamily Autenticazione dell'utente in Traccar}{18}%
+\contentsline {section}{\numberline {4.2}\sffamily Autenticazione dell'utente in Traccar}{19}%
 \contentsline {subsection}{\numberline {4.2.1}\sffamily Utilizzo dell'account-id in Traccar}{19}%
 \contentsline {subsection}{\numberline {4.2.2}\sffamily Considerazioni sulla soluzione}{20}%
-\contentsline {section}{\numberline {4.3}\sffamily Gestione dei device}{20}%
+\contentsline {section}{\numberline {4.3}\sffamily Gestione della comunicazione con i device}{20}%
+\contentsline {subsection}{\numberline {4.3.1}\sffamily Autenticazione e autorizzazione dei device}{21}%
+\contentsline {subsection}{\numberline {4.3.2}\sffamily Storage dei dati dei device}{23}%
+\contentsline {subsection}{\numberline {4.3.3}\sffamily Recupero dei dati da zStorage}{24}%
+\contentsline {subsection}{\numberline {4.3.4}\sffamily Considerazioni finali sulla gestione dei dati dei device}{24}%
+\contentsline {section}{\numberline {4.4}\sffamily Creazione dei device}{24}%
+\contentsline {subsection}{\numberline {4.4.1}\sffamily Modifica del microservizio wfd}{25}%
+\contentsline {subsection}{\numberline {4.4.2}\sffamily Filtro dei device}{26}%
+\contentsline {subsection}{\numberline {4.4.3}\sffamily Osservazioni sulle complicanze emerse}{27}%

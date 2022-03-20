@@ -2,6 +2,8 @@
 \usepackage[suftesi]{frontespizio}
 \usepackage{geometry}
 \usepackage{lmodern}
+\usepackage[cache=false]{minted}
+\usemintedstyle{murphy}
 \usepackage[italian]{babel}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{imakeidx}[column=1, title=Indice, intoc]
@@ -110,7 +112,7 @@ Questa piattaforma supporta molteplici tipi di protocolli per quanto riguarda i 
 \subsection{
 \sffamily Architettura di ZDM}
 L'architettura del cloud di Zerynth è composta da tanti microservizi che cooperano per svolgere azioni e funzionalità specifiche. Nel mio caso ho dovuto spesse volte interfacciarmi con molti di questi microservizi per poter accedere ad esempio ai database di zerynth sia in scrittura che in lettura. \\
-Giusto per citarne alcuni: \textit{rpgboucer}, \textit{login-service}, \textit{wfd-service}, \textit{dev-authorization-service}, \textit{dev-authentication-service}. Il primo permette di accedere solo in lettura ad un particolare database di Zerynth chiamato \textit{zStorage}\footnote{\sffamily I database in zerynth sono principalmente tre zCloud, ZDM e zStorage, nell'ultimo in particolare vengono memorizzati per ogni workspace tutti i dati pubblicati dai device} composto a sua volta da sei partizioni, tre dette "master" e tre "repliche" dei relativi master.\\
+Giusto per citarne alcuni: \textit{rpgboucer}, \textit{login-service}, \textit{wfd-service}, \textit{dev-authorization-service}, \textit{dev-authentication-service}. Il primo permette di accedere solo in lettura ad un particolare database di Zerynth chiamato \textit{zStorage}\footnote{\sffamily I database in zerynth sono principalmente tre zCloud, ZDM e zStorage, nell'ultimo in particolare vengono memorizzati per ogni workspace tutti i dati pubblicati dai device.} composto a sua volta da sei partizioni, tre dette "master" e tre "repliche" dei relativi master.\\
 Il servizio di login-service permette di autorizzare un utente registrato, e nel mio caso ho utilizzato questo servizio indirettamente, e più avanti nel documento verrà spiegato meglio nel dettaglio.\\
 In seguito abbiamo il wfd-service che in realtà ho dovuto modificare, in quanto questo servizio gestisce la creazione, l'aggiornamento e la rimozioni delle entità all'interno dello zCloud, ed infine i servizi dev-autentication e dev-authorization, indispensabili per l'autenticazione del device e per autorizzare quest'ultimo ad utilizzare le risorse all'interno dell'architettura di zerynth.
 
@@ -243,8 +245,10 @@ Il normale funzionamento di traccar prevede un login composto da username e pass
 \begin{enumerate}
 \item Il proxy-server NGNIX riceve la richiesta di accesso da parte di un client all'url in cui traccar è specificato come location (ad esempio traccar.zerynth.localhost) con il cookie dell'utente;
 \item NGNIX inoltra la richiesta al \textit{login-service} con il cookie che l'utente ha passato nella richiesta precedente;
-\item Il servizio restituisce al server NGNIX la response, nella quale cui se l'utente risulta esistere, viene incluso l'account-id di tale utente all'interno di un campo header \textit{x-user-info}.
-\item NGNIX inoltra poi la richiesta iniziale, con l'aggiunta del nuovo campo dell'header a traccar.
+\item Il servizio restituisce al server NGNIX la risposta, nella quale se l'utente risulta esistere, viene incluso l'account-id di tale utente all'interno di un campo header \textit{x-user-info};
+\item NGNIX inoltra poi la richiesta iniziale, con l'aggiunta del nuovo campo dell'header a traccar;
+
+\item Traccar viene eseguito un controllo per verificare che l'utente con quell'account-id sia già registrato nel database di traccar, se non dovesse essere così, allora viene creato un nuovo utente, e salvato nel database e poi l'interfaccia viene restituita al proxy-server NGNIX.
 \end{enumerate}
 
 
@@ -268,7 +272,7 @@ Possono essere effettuati dei miglioramenti e delle ottimizzazioni a questa solu
 
 
 \section{\sffamily
-Gestione dei device}
+Gestione della comunicazione con i device}
 La fase immediatamente successiva è stata quella di implementare tutta la fase di gestione dei dispositivi, codificando i dati che inviano a traccar in modo tale da ricavare informazioni da poter utilizzare per chiamare i servizi interni di zCloud. Le decisioni più importanti che sono state prese in questo caso sono state due, ovvero dove dovessero essere salvate le informazioni sulle varie posizioni di un device, e dove dovessero essere memorizzate le informazioni di un device appena creato. \\
 Per quanto riguarda la prima parte, la scelta è ricaduta sul salvare le posizioni sullo zStorage di zCloud,in modo tale da permettere anche ad altri servizi all'interno dell'architettura dell'azienda di poter accedere a quei dati, senza dover modificare altri servizi.\\
 In generale si può schematizzare tutta la parte relativa ai dispositivi in una sequenza di azioni svolte da traccar, ecco qui di seguito una rappresentazione di questa parte architetturale che comprende solamente la parte di autorizzazione, autenticazione e memorizzazione dei dati.
@@ -277,8 +281,149 @@ In generale si può schematizzare tutta la parte relativa ai dispositivi in una 
 \centering
 \includegraphics[scale=0.6]{images/dev-aut-traccar.jpg}\\ 
 \textit{Figura 4.3: Integrazione dei device tracciabili}
-
 \end{center}
+
+\subsection{\sffamily
+Autenticazione e autorizzazione dei device}
+Quando un device invia dei dati al sistema tramite uno dei protocolli che traccar supporta, le prime azioni che traccar deve effettuare sono autenticare e autorizzare\footnote{\sffamily
+Per \textit{autenticazione} si intende la verifica da parte di dev-authentication che il device esista correttamente per quell'user specifico. Mentre per \textit{autorizzazione} il dev.authorization si occupa di assicurarsi che il device abbia i diritti necessari di lettura e/o scrittura all'interno della piattaforma.} il dispositivo, solo a quel punto può effettuare il salvataggio del payload all'interno di zStorage.\\
+Per l'autenticazione era necessario contattare il dev-authentication service di Zcloud inviando come payload un json specifico che contenesse precise informazioni riguardanti il device che dev'essere autenticato. Traccar riceve il device\_id e l'access token del dispositivo \footnote{\sffamily
+L'\textit{access token} viene generato dal cloud ed attribuito al device per poter identificare univocamente lo stesso in fase di autenticazione.}e queste due informazioni saranno indispensabili per costruire il payload da inoltrare al servizio di Zerynth. Il json specifico da inviare è realizzato come illustrato in figura 4.3.1.
+
+\begin{center}
+\includegraphics[scale=0.6]{images/auth_json.png}\\ 
+\textit{Figura 4.3.1: Struttura del JSON di autenticazione}
+\end{center}
+
+Il payload viene quindi inviato al service di zerynth che restituisce uno status code per confermare che l'autenticazione è avvenuta correttamente.\\
+Oltre all'autenticazione è necessario autorizzare il device ad utilizzare le risorse interne del cloud. Per far ciò è necessario contattare diversi entrypoint di dev-authorizzation che il servizio stesso espone, in modo tale da eseguire tutti i controlli per ogni entità specifica che il dispositivo potrebbe utilizzare.
+\\Gli entrypoint da contattare sono quindi tre e qui di seguito elencati:
+
+\begin{enumerate}
+\item Exchange: entrypoint dedicato all'autorizzazione di un device in relazione ad un particolare exchange, vanno indicati il nome di tale exchange, il virtual host sul quale è presente l'exchange, il device\_id e il tipo di permesso, nel mio caso in scrittura;
+
+\item Ip del device: in questo entrypoint viene autorizzato l'indirizzo ip del device, e devono essere indicati l'ip del dispositivo, il device\_id e il virtual host;
+
+\item Topic: infine tramite questo entrypoint si può autorizzare un device per uno specifico topic, indicandone il nome del topic, il device\_id del dispositivo, il virtual host, il tipo di permesso, nel mio caso in scrittura e infine anche la routning-key specifica.
+
+\end{enumerate}
+
+
+Nel caso in cui questa fase fallisca il device non può comunicare la sua posizione al sistema ne ovviamente salvare i propri dati all'interno del cloud. \\
+Queste chiamate ai due servizi vengono effettuate all'interno di un'unica funzione, invocata dalla classe BaseProtocolDecoder che a sua volta possiede un metodo "onMessage()" che si occupa di gestire tutte le azioni di controllo che devono essere eseguite ogni qual volta un device comunica con Traccar.\\
+Per ottimizzare il codice questa funzione che contatta i servizi di zerynth è implementata all'interno di una classe chiamata \textit{ZdataManager} che svolge un compito di "interfaccia" tra i dati di Traccar e i dati di zCloud. All'interno di questa classe viene inizializzata una variabile privata che memorizza tutti i dispositivi appena autenticati e autorizzati, in modo tale da evitare di fare eccessive richieste http ai microservizi del cloud.\\
+
+\subsection{\sffamily
+Storage dei dati dei device}
+Dopo aver autorizzato i dispositivi, la fase successiva è stata quella di memorizzare i payload di dati riguardanti la posizione all'interno dello zStorage. Più precisamente all'interno di Traccar è stata implementata una funzionalità che effettua delle publish sulle code rabbitMQ presenti nell'architetura di Zerynth, questi dati verranno gestiti da altri microservizi che salveranno le informazioni all'interno dello zStorage di zerynth.\\
+Questa funzionalità è fornita da un metodo all'interno della classe citata precedentemente ovvero ZdataManager, in questa funzione infatti oltre all'effettuare la publish effettiva sulla coda rabbitMQ, viene anche aggiornata l'ultima posizione nota del device che ha appena comunicato con il server, modificando una variabile HashMap locale che associa un device alla sua ultima posizione inviata.\\
+E' stata dunque necessaria la registrazione di un nuovo handler\footnote{\sffamily
+All'interno del server di traccar ci sono diversi handler che si occupano di effettuare azioni diverse quando avvengono determinati eventi, come ad esempio un device che comunica la sua posizione, o un device che entra in una geofence. Ogni handler implementa una BaseDataHandler o una BaseEventHandler, classi che possiedono dei metodi abstract da implementare, come ad esempio l'handlePosition.} custom, chiamato ZdataHandler, all'interno della pipeline degli handler presenti in traccar e successivamente l'implementazione del metodo handlePosition della classe.
+Il payload che viene pubblicato sulla coda rabittMQ ha una struttura ben specifica, ovvero rappresenta in formato JSON la modellazione dell'entità \textit{Position} presente in Traccar. Infatti il device invia al server la sua posizione e indipendentemente dal suo protocollo viene codificato tutto in un oggetto di tipo Position. Nel mio caso dunque viene effettuata una deserializzazione di tale oggetto in un file JSON e successivamente viene effettuata la publish con questo payload. La struttura del JSON è raffigurata in figura 4.3.2.
+
+\begin{center}
+\includegraphics[scale=0.6]{images/json_position.png}\\ 
+\textit{Figura 4.3.2: Struttura del JSON di un oggetto di tipo Position}
+\end{center}
+
+Una volta effettuato il salvataggio del payload, viene aggiornata una variabile tenuta internamente alla classe ZdataManager, che memorizza le ultiime posizioni note di ogni singolo device.
+
+\subsection{\sffamily
+Recupero dei dati da zStorage}
+Per preservare il corretto funzionamento di tutte le funzionaità di traccar come geofences, report e notifications era indispensabile poter recuperare i dati relativi alle posizioni salvate sullo zStorage. Anche in questo caso è stato fondamentale avere la possibilità di sfruttare un servizio interno al cloud per poter accedere più facilmente ai dati in lettura. Il servizio in questione è il \textit{pgbouncer} che si occupa di ricevere le query da parte di un altro servizio, e gestire le richieste in lettura al database. \\
+I metodi che implementano la parte relativa all'estrazione dei dati si trovano all'interno della classe dataManager di traccar. Sono stati implementati due metodi in particolare, uno per ottenere l'ultima posizione nota di ogni device, e l'altro per ottenere la lista delle posizioni di un dispositivo. Una volta recuperati i dati, essi possono essere o inviati al client che ha effettuato la richiesta tramite api oppure sono utilizzati per inizializzare alcune strutture dati.
+
+\subsection{\sffamily
+Considerazioni finali sulla gestione dei dati dei device}
+La difficoltà principale riscontrata in questa fase, è stata quella di capire esattamente il funzionamento di traccar in quanto concerne la gestione dei dati inviati dai dispositivi, e quindi individuare i punti esatti in cui inserire le chiamate ai metodi nuovi e comprendere al meglio quali sarebbero state le conseguenze in seguito alle modifiche del codice.\\
+ La parte più complessa è stata quella di evitare di modificare in maniera eccessiva il codice di traccar, cercando altresì di estenderlo aggiungendo classi custom. Per buona parte di questa fase l'implementazione di questi nuovi moduli è avvenuta con successo, sebbene è doveroso sottolineare come in alcuni punti è stato del tutto inevitabile agire direttamente sul codice originale di traccar.\\
+Anche per quanto riguarda la modifica della sorgente dei dati inviati dai device è stato importante il lavoro di code refactoring, in quanto è stato necessario sostituire del tutto alcuni metodi che già esistevano, come ad esempio il metodo che eseguiva il \textit{fetching} dei dati dei dispositivi dal database di traccar.
+
+\section{\sffamily
+Creazione dei device}
+Un altro aspetto fondamentale è la gestione della creazione dei device, e quindi garantire la sincronizzazione tra zCloud e Traccar. Il servizio di zCloud che ho utilizzato in questo caso è stato il \textit{wfd-service}, un servizio interamente dedicato per la creazione, eliminazione, modifica e aggiornamento delle tre principali entità che esistono in Zerynth ovvero workspaces, fleets e devices. \\
+In generale l'integrazione di questa sezione è logicamente abbastanza semplice. Il client crea un device sulla piattaforma di zcloud e immediatamente viene eseguita una post al servizio di traccar che salva il dispositivo sul proprio database come riportato in figura 4.4. Nelle sezioni seguenti entreremo maggiormente nei dettagli implementativi e delle problematiche riscontrate in questa fase.
+
+
+\begin{center}
+\includegraphics[scale=0.6]{images/create_dev.jpg}\\ 
+\textit{Figura 4.4: Creazione di un nuovo device}
+\end{center}
+
+\subsection{\sffamily
+Modifica del microservizio wfd}
+E' stato necessario modificare il servizio di zerynth per poter creare un oggetto nel database in traccar, dunque inizialmente ho dovuto individuare il punto in cui veniva effettuata la creazione del device. Il servizio, interamente scritto in golang, era composto da una funzione \textit{createNewDevice()} che invocava un'ulteriore funzione chiamata \textit{storeDevice()}. In questa parte di codice veniva eseguita a tutti gli effetti la query per memorizzare i dati del nuovo device nel database.\\
+Una deduzione ovvia di questa fase è che se la query al database dovesse fallire per un qualsiasi motivo, allora la creazione del device in traccar non sarebbe dovuta avvenire. Per implementare questo requisito, sia la query al database sia la richiesta post al servizio di traccar, sono state inserite all'interno di una \textit{transaction}. In questo modo è garantito che se il salvataggio al databse non dovesse andare a buon fine, allora la richiesta di creazione di un nuovo device all'interno di traccar non sarebbe stata effettuata.\\
+\begin{minted}{go}
+	err := p.db.RunInTransaction(func(tx *pg.Tx) error {
+		err := tx.Insert(device) 
+		//controlli di errore
+		wks, err := p.GetWksIdOfDevice(device.ID)
+		//controlli di errore
+		resp := traccar_post(device, wks)
+		if resp == nil {
+			return errorsZDM
+		}
+		return nil
+	})
+
+
+\end{minted}
+
+
+\noindent Come si può osservare da questo stralcio di codice estratto dalla funzione \texttt{storeDevice()}, sia l'inserimento dei dati all'interno del database che l'invocazione del metodo che esegue la richiesta http post del device appena creato sono all'interno della \texttt{RunInTransaction()}.\\
+E' importante sottolineare che in queste righe di codice sono state omesse alcune parti, come ad esempio i vari controlli sugli errori provocati dalle varie richieste.\\
+Adesso, per concludere questa sezione, entrerò maggiormente nel dettaglio della funzione \texttt{traccar\_post()}, essa infatti si occupa di effettuare la chiamata al servizio di traccar per permettere il salvataggio del nuovo dispositivo e prende come parametri il device e il workspace\_id di della workspace a cui esso appartiene. Questo servirà nella fase in cui l'utente accederà a traccar, e dovrà visualizzare sull'interfaccia solo i device che appartengono alla workspace che l'utente sta utilizzando in quel momento. Questa funzione infatti deve comporre il payload in JSON strutturato in modo adeguato con i dati che appartengono al dispositivo, come raffigurato in figura 4.4.1, ed effettuare la richiesta post all'api \texttt{http://traccar-service:8082/api/devices}.
+
+\begin{minted}{json}
+{
+   "id":0,
+   "attributes":{},
+   "uniqueId":"dev_id;wks_id",
+   "name": "name",
+   "groupId":0,
+   "staus":"offline",
+   "lastUpdate":"dd/mm/yyyy HH:MM:SS",
+   "positionId":0,
+   "geofenceIds":[],
+   "phone":"",
+   "model":"",
+   "category":"",
+   "contact":"",
+   "disabled":false
+}
+
+\end{minted}
+
+
+\noindent Lo \texttt{uniqueId} merita un attimo di attenzione in quanto è strutturato in un modo particolare ovvero:
+\mint{json}|"uniqueId":"dev_id;wks_id"|
+\noindent Dove il dev\_id e il wks\_id sono due variabili, la prima rappresenta l'id del device e la seconda l'id della workspace a cui quel dispositivo appartiene. Questa scelta è stata dovuta al fatto di poter risalire a quale workspace un device appartenga anche da Traccar, senza dover fare ulteriori richieste http da parte di Traccar stesso.
+
+
+\subsection{\sffamily 
+Filtro dei device}
+Per completare questa sezione correttamente, era ancora necessario affrontare un ultimo problema, ovvero come restituire le informazioni corrette al client che intende visualizzare i device di una specifica workspace. Per fare ciò, una volta individuata la classe che si occupava di gestire la richiesta alla api, chiamata \texttt{DeviceResource()}, era indispensabile capire come modificarla correttamente per adempiere al nostro scopo.\\
+Il primo cambiamento da dover effettuare
+
+
+
+\subsection{\sffamily
+Osservazioni sulle complicanze emerse}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
