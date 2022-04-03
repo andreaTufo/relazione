@@ -1,50 +1,50 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {chapter}{\numberline {1} \sffamily Introduzione}{5}%
-\contentsline {chapter}{\numberline {2} \sffamily Background e strumenti utilizzati}{7}%
-\contentsline {section}{\numberline {2.1}\sffamily API REST}{7}%
-\contentsline {section}{\numberline {2.2}\sffamily Docker e docker-compose}{8}%
-\contentsline {subsection}{\numberline {2.2.1}\sffamily Utilizzo di docker e docker-compose}{8}%
-\contentsline {section}{\numberline {2.3}\sffamily Code rabbitMQ}{8}%
-\contentsline {chapter}{\numberline {3} \sffamily Studio del sistema e analisi dei requisiti}{11}%
-\contentsline {section}{\numberline {3.1} \sffamily Studio della piattaforma Traccar}{11}%
-\contentsline {subsection}{\numberline {3.1.1} \sffamily Come funziona Traccar}{11}%
-\contentsline {subsection}{\numberline {3.1.2}\sffamily Analisi statica del codice di traccar}{12}%
-\contentsline {subsection}{\numberline {3.1.3} \sffamily Architettura di ZDM}{13}%
-\contentsline {subsection}{\numberline {3.1.4} \sffamily Caratteristiche di Traccar}{13}%
-\contentsline {subsection}{\numberline {3.1.5} \sffamily Problematiche emerse}{14}%
-\contentsline {section}{\numberline {3.2} \sffamily Struttura di zCloud}{14}%
-\contentsline {section}{\numberline {3.3} \sffamily Parallelismo Traccar e zCloud}{14}%
-\contentsline {paragraph}{ \sffamily Device}{14}%
-\contentsline {paragraph}{ \sffamily Fleet}{15}%
-\contentsline {paragraph}{ \sffamily Workspace}{16}%
-\contentsline {section}{\numberline {3.4} \sffamily Personas e requisiti}{17}%
-\contentsline {chapter}{\numberline {4} \sffamily Integrazione del sistema}{19}%
-\contentsline {section}{\numberline {4.1}\sffamily Configurazione di Traccar in NGNIX}{20}%
-\contentsline {section}{\numberline {4.2}\sffamily Autenticazione dell'utente in Traccar}{21}%
-\contentsline {subsection}{\numberline {4.2.1}\sffamily Utilizzo dell'account-id in Traccar}{21}%
-\contentsline {subsection}{\numberline {4.2.2}\sffamily Considerazioni sulla soluzione}{22}%
-\contentsline {section}{\numberline {4.3}\sffamily Gestione della comunicazione con i device}{22}%
-\contentsline {subsection}{\numberline {4.3.1}\sffamily Autenticazione e autorizzazione dei device}{23}%
-\contentsline {subsection}{\numberline {4.3.2}\sffamily Storage dei dati dei device}{25}%
-\contentsline {subsection}{\numberline {4.3.3}\sffamily Recupero dei dati da zStorage}{26}%
-\contentsline {subsection}{\numberline {4.3.4}\sffamily Considerazioni finali sulla gestione dei dati dei device}{26}%
-\contentsline {section}{\numberline {4.4}\sffamily Creazione dei device e delle workspace}{26}%
-\contentsline {subsection}{\numberline {4.4.1}\sffamily Modifica del microservizio wfd}{27}%
-\contentsline {subsection}{\numberline {4.4.2}\sffamily Filtro dei device}{31}%
-\contentsline {subsection}{\numberline {4.4.3}\sffamily Osservazioni sulle complicazioni emerse}{31}%
-\contentsline {chapter}{\numberline {5}\sffamily Integration test}{33}%
-\contentsline {section}{\numberline {5.1}\sffamily Test del login}{33}%
-\contentsline {section}{\numberline {5.2}\sffamily Test del device}{34}%
-\contentsline {section}{\numberline {5.3}\sffamily Test dello storage}{35}%
-\contentsline {section}{\numberline {5.4}\sffamily Test dell'autenticazione del device}{36}%
-\contentsline {section}{\numberline {5.5}\sffamily Ulteriori modalità di testing}{36}%
-\contentsline {chapter}{\numberline {6}\sffamily Conclusione}{39}%
-\contentsline {section}{\numberline {6.1}\sffamily Demo finale}{39}%
-\contentsline {section}{\numberline {6.2}\sffamily Critiche e possibili miglioramenti}{41}%
-\contentsline {subsection}{\numberline {6.2.1}\sffamily Modularità}{41}%
-\contentsline {subsection}{\numberline {6.2.2}\sffamily Gestione delle entità}{41}%
-\contentsline {subsection}{\numberline {6.2.3}\sffamily Duplicazione delle istanze}{42}%
-\contentsline {section}{\numberline {6.3}\sffamily Analisi dei punti di forza del lavoro svolto}{42}%
-\contentsline {section}{\numberline {6.4}\sffamily Ultime osservazioni sugli obiettivi raggiunti}{43}%
-\contentsline {section}{\numberline {6.5}\sffamily Ringraziamenti}{43}%
+\contentsline {chapter}{\numberline {1} Introduzione}{5}%
+\contentsline {chapter}{\numberline {2} Background e strumenti utilizzati}{7}%
+\contentsline {section}{\numberline {2.1} API REST}{7}%
+\contentsline {section}{\numberline {2.2} Docker e docker-compose}{8}%
+\contentsline {subsection}{\numberline {2.2.1} Utilizzo di docker e docker-compose}{9}%
+\contentsline {section}{\numberline {2.3} Code rabbitMQ}{10}%
+\contentsline {chapter}{\numberline {3} Studio del sistema e analisi dei requisiti}{13}%
+\contentsline {section}{\numberline {3.1} Studio della piattaforma Traccar}{13}%
+\contentsline {subsection}{\numberline {3.1.1} Come funziona Traccar}{14}%
+\contentsline {subsection}{\numberline {3.1.2} Analisi statica del codice di traccar}{15}%
+\contentsline {subsection}{\numberline {3.1.3} Architettura di zCloud}{16}%
+\contentsline {subsection}{\numberline {3.1.4} Caratteristiche di Traccar}{16}%
+\contentsline {subsection}{\numberline {3.1.5} Problematiche emerse}{17}%
+\contentsline {section}{\numberline {3.2} Entità di zCloud}{17}%
+\contentsline {section}{\numberline {3.3} Parallelismo Traccar e zCloud}{18}%
+\contentsline {paragraph}{ Device}{18}%
+\contentsline {paragraph}{ Fleet}{19}%
+\contentsline {paragraph}{ Workspace}{19}%
+\contentsline {section}{\numberline {3.4} Personas e requisiti}{20}%
+\contentsline {chapter}{\numberline {4} Integrazione del sistema}{23}%
+\contentsline {section}{\numberline {4.1} Configurazione di Traccar in NGNIX}{24}%
+\contentsline {section}{\numberline {4.2} Autenticazione dell'utente in Traccar}{25}%
+\contentsline {subsection}{\numberline {4.2.1}Implementazione in traccar}{26}%
+\contentsline {subsection}{\numberline {4.2.2} Considerazioni sulla soluzione}{27}%
+\contentsline {section}{\numberline {4.3} Gestione della comunicazione con i device}{27}%
+\contentsline {subsection}{\numberline {4.3.1} Autenticazione e autorizzazione dei device}{29}%
+\contentsline {subsection}{\numberline {4.3.2} Storage dei dati dei device}{31}%
+\contentsline {subsection}{\numberline {4.3.3} Recupero dei dati da zStorage}{32}%
+\contentsline {subsection}{\numberline {4.3.4} Considerazioni finali sulla gestione dei dati dei device}{33}%
+\contentsline {section}{\numberline {4.4} Creazione dei device e delle workspace}{33}%
+\contentsline {subsection}{\numberline {4.4.1} Modifica del microservizio wfd}{34}%
+\contentsline {subsection}{\numberline {4.4.2} Filtro dei device}{39}%
+\contentsline {subsection}{\numberline {4.4.3} Osservazioni sulle complicazioni emerse}{40}%
+\contentsline {chapter}{\numberline {5} Integration test}{43}%
+\contentsline {section}{\numberline {5.1} Test del login}{44}%
+\contentsline {section}{\numberline {5.2} Test del device}{45}%
+\contentsline {section}{\numberline {5.3} Test dello storage}{46}%
+\contentsline {section}{\numberline {5.4} Test dell'autenticazione del device}{47}%
+\contentsline {section}{\numberline {5.5} Ulteriori modalità di testing}{47}%
+\contentsline {chapter}{\numberline {6} Conclusione}{49}%
+\contentsline {section}{\numberline {6.1} Demo finale}{49}%
+\contentsline {section}{\numberline {6.2} Critiche e possibili miglioramenti}{52}%
+\contentsline {subsection}{\numberline {6.2.1} Modularità}{52}%
+\contentsline {subsection}{\numberline {6.2.2} Gestione delle entità}{53}%
+\contentsline {subsection}{\numberline {6.2.3} Duplicazione delle istanze}{53}%
+\contentsline {section}{\numberline {6.3} Analisi dei punti di forza del lavoro svolto}{54}%
+\contentsline {section}{\numberline {6.4} Ultime osservazioni sugli obiettivi raggiunti}{54}%
+\contentsline {section}{\numberline {6.5} Ringraziamenti}{55}%
