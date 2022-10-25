@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  3 APR 2022 19:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  7 APR 2022 10:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -6,10 +6,10 @@ entering extended mode
 (./relazione.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
-File: bk12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
 \c@chapter=\count168
@@ -522,30 +522,30 @@ e
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(86.72377pt, 424.06033pt, 86.72377pt)
-* v-part:(T,H,B)=(86.72377pt, 671.5993pt, 86.72377pt)
+* modes: 
+* h-part:(L,W,R)=(99.58464pt, 426.79135pt, 71.13188pt)
+* v-part:(T,H,B)=(101.40665pt, 644.05556pt, 99.58464pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=424.06033pt
-* \textheight=671.5993pt
-* \oddsidemargin=14.45378pt
-* \evensidemargin=14.45378pt
-* \topmargin=-17.42001pt
+* \textwidth=426.79135pt
+* \textheight=644.05556pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=27.31465pt
+* \topmargin=-7.86334pt
 * \headheight=12.0pt
-* \headsep=19.8738pt
+* \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=88.0pt
-* \marginparsep=7.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=28.45274pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -569,11 +569,8 @@ Package pdftex.def Info: relazione-frn.pdf  used on input line 19.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 [1
 
-
  <./relazione-frn.pdf{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}>]
-[2
-
-] (./relazione.toc
+[1] (./relazione.toc
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
 .
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
@@ -597,7 +594,9 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 5.
- [3])
+ [2
+
+] [3])
 \tf@toc=\write7
 \openout7 = `relazione.toc'.
 
@@ -611,173 +610,135 @@ Capitolo 2.
 
 ] [8]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 75.
+(Font)              <10> on input line 89.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 75.
+(Font)              <7> on input line 89.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 75.
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-84.
- (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              <5> on input line 89.
  [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-[11] [12
-
-]
-Capitolo 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-[13] [14]
-<images/arcTraccar.png, id=84, 550.4565pt x 372.1905pt>
-File: images/arcTraccar.png Graphic file (type png)
-<use images/arcTraccar.png>
-Package pdftex.def Info: images/arcTraccar.png  used on input line 105.
-(pdftex.def)             Requested size: 385.31693pt x 260.53157pt.
- [15 <./images/arcTraccar.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-
- []
-
-[16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
-
- []
-
-<images/traccDev.png, id=96, 183.68625pt x 237.2865pt>
-File: images/traccDev.png Graphic file (type png)
-<use images/traccDev.png>
-Package pdftex.def Info: images/traccDev.png  used on input line 154.
-(pdftex.def)             Requested size: 146.94917pt x 189.82944pt.
-<images/zClDev.png, id=97, 226.446pt x 209.583pt>
-File: images/zClDev.png Graphic file (type png)
-<use images/zClDev.png>
-Package pdftex.def Info: images/zClDev.png  used on input line 158.
-(pdftex.def)             Requested size: 135.86864pt x 125.75076pt.
-[18 <./images/traccDev.png> <./images/zClDev.png>]
-<images/traccGr.png, id=103, 154.176pt x 98.769pt>
-File: images/traccGr.png Graphic file (type png)
-<use images/traccGr.png>
-Package pdftex.def Info: images/traccGr.png  used on input line 178.
-(pdftex.def)             Requested size: 123.34094pt x 79.01529pt.
-<images/zClGr.png, id=104, 217.41225pt x 154.77824pt>
-File: images/zClGr.png Graphic file (type png)
-<use images/zClGr.png>
-Package pdftex.def Info: images/zClGr.png  used on input line 183.
-(pdftex.def)             Requested size: 152.18752pt x 108.34402pt.
-<images/wks.jpg, id=105, 518.93875pt x 331.2375pt>
-File: images/wks.jpg Graphic file (type jpg)
-<use images/wks.jpg>
-Package pdftex.def Info: images/wks.jpg  used on input line 201.
-(pdftex.def)             Requested size: 311.36565pt x 198.74402pt.
-<images/groups.jpg, id=106, 520.94624pt x 328.22626pt>
-File: images/groups.jpg Graphic file (type jpg)
-<use images/groups.jpg>
-Package pdftex.def Info: images/groups.jpg  used on input line 206.
-(pdftex.def)             Requested size: 312.57016pt x 196.93727pt.
- [19 <./images/traccGr.png> <./images/zClGr.png>] [20 <./images/wks.jpg> <./ima
-ges/groups.jpg>]
-<images/diagramma.jpg, id=116, 584.1825pt x 1022.82124pt>
-File: images/diagramma.jpg Graphic file (type jpg)
-<use images/diagramma.jpg>
-Package pdftex.def Info: images/diagramma.jpg  used on input line 219.
-(pdftex.def)             Requested size: 245.35497pt x 429.58199pt.
- [21 <./images/diagramma.jpg>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-26.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+00.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+105.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [10] [11] [12] [13]
+Capitolo 3.
+[14
+
+]
+<images/arcTraccar.png, id=87, 550.4565pt x 372.1905pt>
+File: images/arcTraccar.png Graphic file (type png)
+<use images/arcTraccar.png>
+Package pdftex.def Info: images/arcTraccar.png  used on input line 147.
+(pdftex.def)             Requested size: 275.22757pt x 186.09479pt.
+ [15 <./images/arcTraccar.png>] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-[22]
+<images/traccDev.png, id=99, 183.68625pt x 237.2865pt>
+File: images/traccDev.png Graphic file (type png)
+<use images/traccDev.png>
+Package pdftex.def Info: images/traccDev.png  used on input line 195.
+(pdftex.def)             Requested size: 146.94917pt x 189.82944pt.
+<images/zClDev.png, id=100, 226.446pt x 209.583pt>
+File: images/zClDev.png Graphic file (type png)
+<use images/zClDev.png>
+Package pdftex.def Info: images/zClDev.png  used on input line 199.
+(pdftex.def)             Requested size: 135.86864pt x 125.75076pt.
+[18]
+<images/traccGr.png, id=105, 154.176pt x 98.769pt>
+File: images/traccGr.png Graphic file (type png)
+<use images/traccGr.png>
+Package pdftex.def Info: images/traccGr.png  used on input line 219.
+(pdftex.def)             Requested size: 123.34094pt x 79.01529pt.
+<images/zClGr.png, id=106, 217.41225pt x 154.77824pt>
+File: images/zClGr.png Graphic file (type png)
+<use images/zClGr.png>
+Package pdftex.def Info: images/zClGr.png  used on input line 224.
+(pdftex.def)             Requested size: 152.18752pt x 108.34402pt.
+ [19 <./images/traccDev.png> <./images/zClDev.png>]
+<images/wks.jpg, id=112, 518.93875pt x 331.2375pt>
+File: images/wks.jpg Graphic file (type jpg)
+<use images/wks.jpg>
+Package pdftex.def Info: images/wks.jpg  used on input line 242.
+(pdftex.def)             Requested size: 285.41719pt x 182.18118pt.
+<images/groups.jpg, id=113, 520.94624pt x 328.22626pt>
+File: images/groups.jpg Graphic file (type jpg)
+<use images/groups.jpg>
+Package pdftex.def Info: images/groups.jpg  used on input line 246.
+(pdftex.def)             Requested size: 286.52132pt x 180.525pt.
+ [20 <./images/traccGr.png> <./images/zClGr.png>] [21 <./images/wks.jpg> <./ima
+ges/groups.jpg>]
+<images/diagramma.jpg, id=122, 584.1825pt x 1022.82124pt>
+File: images/diagramma.jpg Graphic file (type jpg)
+<use images/diagramma.jpg>
+Package pdftex.def Info: images/diagramma.jpg  used on input line 259.
+(pdftex.def)             Requested size: 245.35497pt x 429.58199pt.
+
+[22 <./images/diagramma.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+[23]
 Capitolo 4.
 
-Underfull \hbox (badness 2111) in paragraph at lines 240--240
+Underfull \hbox (badness 2617) in paragraph at lines 279--279
 [][]\OT1/lmr/m/n/10 OsmAnd (Open-Street-map Au-to-ma-ted Na-vi-ga-tion Di-rec-t
 ion pro-to-col) ^^Re un pro-to-col-
  []
 
 
-Underfull \hbox (badness 2529) in paragraph at lines 240--240
+Underfull \hbox (badness 2922) in paragraph at lines 279--279
 \OT1/lmr/m/n/10 lo di li-ve trac-king uti-liz-za-to dal-l'o-mo-ni-mo soft-ware 
 di trac-cia-men-to OsmAnd, es-so si
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 240--240
+Underfull \hbox (badness 1990) in paragraph at lines 279--279
 \OT1/lmr/m/n/10 pu^^Ro im-pie-ga-re, la-to de-vi-ce, in-se-ren-do nel-la url, a
 l-la qua-le il di-spo-si-ti-vo in-ten-de man-
  []
 
 
-Underfull \hbox (badness 2932) in paragraph at lines 240--240
+Underfull \hbox (badness 3333) in paragraph at lines 279--279
 \OT1/lmr/m/n/10 da-re i da-ti, tut-ti i pa-ra-me-tri ne-ces-sa-ri al-la lo-ca-l
 iz-za-zio-ne e iden-ti-fi-ca-zio-ne del de-vi-
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 240--240
+Underfull \hbox (badness 1342) in paragraph at lines 279--279
 \OT1/lmr/m/n/10 ce stess. Un esem-pio di url strut-tu-ra-ta in ba-se al pro-to-
 col-lo OsmAnd ^^Re il se-guen-te:
  []
 
-[23
+[24
 
 ]
-<images/traccar_login_serv.jpg, id=127, 766.865pt x 578.16pt>
+<images/traccar_login_serv.jpg, id=133, 766.865pt x 578.16pt>
 File: images/traccar_login_serv.jpg Graphic file (type jpg)
 <use images/traccar_login_serv.jpg>
-Package pdftex.def Info: images/traccar_login_serv.jpg  used on input line 249.
+Package pdftex.def Info: images/traccar_login_serv.jpg  used on input line 288.
 
-(pdftex.def)             Requested size: 460.12256pt x 346.89867pt.
-
-Overfull \hbox (36.06223pt too wide) in paragraph at lines 249--249
- [] 
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+(pdftex.def)             Requested size: 421.77707pt x 317.98898pt.
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
-[25 <./images/traccar_login_serv.jpg>]
-Overfull \hbox (3.37593pt too wide) in paragraph at lines 261--262
-\OT1/lmr/m/n/12 in cui trac-car ^^Re spe-ci-fi-ca-to co-me lo-ca-tion (ad esem-
+[26 <./images/traccar_login_serv.jpg>]
+Overfull \hbox (3.5824pt too wide) in paragraph at lines 300--301
+\OT1/lmr/m/n/12 in cui Trac-car ^^Re spe-ci-fi-ca-to co-me lo-ca-tion (ad esem-
 pio trac-car.zerynth.localhost)
  []
 
-
-Underfull \hbox (badness 1648) in paragraph at lines 271--271
-[][]\OT1/lmr/m/n/10 Per en-try-point si in-ten-de l'a-pi espo-sta dal ser-ver, 
-ov-ve-ro la par-te di url che ag-
- []
-
-[26] [27]
-<images/dev-aut-traccar.jpg, id=142, 757.83125pt x 395.4775pt>
-File: images/dev-aut-traccar.jpg Graphic file (type jpg)
-<use images/dev-aut-traccar.jpg>
-Package pdftex.def Info: images/dev-aut-traccar.jpg  used on input line 303.
-(pdftex.def)             Requested size: 454.70226pt x 237.28833pt.
-
-Overfull \hbox (30.64192pt too wide) in paragraph at lines 303--303
- [] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28 <./images/dev-aut-traccar.jpg>]
+[27]
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -S default -f latex -P commandprefix=PYG > relazione.out.p
@@ -788,48 +749,86 @@ runsystem(pygmentize -S friendly -f latex -P commandprefix=PYGfriendly > relazi
 one.out.pyg)...executed.
 
  (./relazione.out.pyg)
-runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o rel
+runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -o rel
+azione.out.pyg relazione.pyg)...executed.
+
+ (./relazione.out.pyg)
+\openout4 = `relazione.pyg'.
+
+runsystem(pygmentize -l text -f latex -P commandprefix=PYG -F tokenmerge -o rel
 azione.out.pyg relazione.pyg)...executed.
 
 
-(./relazione.out.pyg
-LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 3.
-) [29] [30]
+(./relazione.out.pyg) [28] [29]
+<images/dev-aut-traccar.jpg, id=150, 757.83125pt x 395.4775pt>
+File: images/dev-aut-traccar.jpg Graphic file (type jpg)
+<use images/dev-aut-traccar.jpg>
+Package pdftex.def Info: images/dev-aut-traccar.jpg  used on input line 344.
+(pdftex.def)             Requested size: 424.38261pt x 221.46588pt.
+
+Underfull \hbox (badness 1112) in paragraph at lines 353--353
+[][]\OT1/lmr/m/n/10 L'\OT1/lmr/m/it/10 access-token \OT1/lmr/m/n/10 vie-ne ge-n
+e-ra-to dal cloud ed at-tri-bui-to al de-vi-ce per po-ter iden-ti-fi-ca-re
+ []
+
+[30 <./images/dev-aut-traccar.jpg>]
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o rel
 azione.out.pyg relazione.pyg)...executed.
 
- (./relazione.out.pyg [31]) [32] [33]
-<images/dev_create.jpg, id=163, 756.8275pt x 368.37625pt>
+ (./relazione.out.pyg
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 3.
+) [31] [32]
+\openout4 = `relazione.pyg'.
+
+runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o rel
+azione.out.pyg relazione.pyg)...executed.
+
+
+(./relazione.out.pyg) [33]
+\openout4 = `relazione.pyg'.
+
+runsystem(pygmentize -l java -f latex -P commandprefix=PYG -F tokenmerge -o rel
+azione.out.pyg relazione.pyg)...executed.
+
+ (./relazione.out.pyg
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+2.
+
+(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [34]
+<images/dev_create.jpg, id=170, 756.8275pt x 368.37625pt>
 File: images/dev_create.jpg Graphic file (type jpg)
 <use images/dev_create.jpg>
-Package pdftex.def Info: images/dev_create.jpg  used on input line 400.
-(pdftex.def)             Requested size: 454.1pt x 221.02744pt.
+Package pdftex.def Info: images/dev_create.jpg  used on input line 450.
+(pdftex.def)             Requested size: 438.96025pt x 213.65836pt.
 
-Overfull \hbox (30.03967pt too wide) in paragraph at lines 400--400
+Overfull \hbox (12.1689pt too wide) in paragraph at lines 450--450
  [] 
  []
 
-[34 <./images/dev_create.jpg>]
+[35] [36 <./images/dev_create.jpg>]
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -l go -f latex -P commandprefix=PYG -F tokenmerge -o relaz
 ione.out.pyg relazione.pyg)...executed.
 
- (./relazione.out.pyg) [35]
+ (./relazione.out.pyg) [37]
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o rel
 azione.out.pyg relazione.pyg)...executed.
 
- (./relazione.out.pyg)
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+
+(./relazione.out.pyg)
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
 
-[36]
+[38]
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -l go -f latex -P commandprefix=PYG -F tokenmerge -o relaz
@@ -841,45 +840,29 @@ ione.out.pyg relazione.pyg)...executed.
 runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o rel
 azione.out.pyg relazione.pyg)...executed.
 
- (./relazione.out.pyg [37]) [38]
-<images/wfd_traccar.jpg, id=181, 564.1075pt x 588.1975pt>
+ (./relazione.out.pyg [39]) [40]
+<images/wfd_traccar.jpg, id=190, 564.1075pt x 588.1975pt>
 File: images/wfd_traccar.jpg Graphic file (type jpg)
 <use images/wfd_traccar.jpg>
-Package pdftex.def Info: images/wfd_traccar.jpg  used on input line 496.
+Package pdftex.def Info: images/wfd_traccar.jpg  used on input line 546.
 (pdftex.def)             Requested size: 282.05305pt x 294.09802pt.
 
-Underfull \hbox (badness 1184) in paragraph at lines 504--504
+Underfull \hbox (badness 1365) in paragraph at lines 554--554
 \OT1/lmr/m/n/10 sie-me di de-vi-ce, in-di-can-do nel-la URL tut-ti gli uni-queI
 d, ma ^^Re be-ne no-ta-re che an-che
  []
 
-[39 <./images/wfd_traccar.jpg>]
+[41 <./images/wfd_traccar.jpg>]
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -l postgresql -f latex -P commandprefix=PYG -F tokenmerge 
 -o relazione.out.pyg relazione.pyg)...executed.
 
- (./relazione.out.pyg) [40] [41] [42
+ (./relazione.out.pyg) [42] [43]
+Capitolo 5.
+[44
 
 ]
-Capitolo 5.
-
-Underfull \vbox (badness 1062) has occurred while \output is active []
-
- [43]
-\openout4 = `relazione.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o r
-elazione.out.pyg relazione.pyg)...executed.
-
-
-(./relazione.out.pyg) [44]
-\openout4 = `relazione.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o r
-elazione.out.pyg relazione.pyg)...executed.
-
- (./relazione.out.pyg)
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o r
@@ -891,106 +874,97 @@ elazione.out.pyg relazione.pyg)...executed.
 runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o r
 elazione.out.pyg relazione.pyg)...executed.
 
-
-(./relazione.out.pyg
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-11.
- (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
+ (./relazione.out.pyg)
 \openout4 = `relazione.pyg'.
 
 runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o r
 elazione.out.pyg relazione.pyg)...executed.
 
+ (./relazione.out.pyg)
+[46]
+\openout4 = `relazione.pyg'.
 
-(./relazione.out.pyg [46])
-Underfull \hbox (badness 10000) in paragraph at lines 635--637
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o r
+elazione.out.pyg relazione.pyg)...executed.
+
+ (./relazione.out.pyg) [47]
+\openout4 = `relazione.pyg'.
+
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o r
+elazione.out.pyg relazione.pyg)...executed.
+
+ (./relazione.out.pyg)
+Underfull \hbox (badness 10000) in paragraph at lines 689--691
 
  []
 
-<images/teltotest.jpeg, id=209, 1083.04625pt x 1262.7175pt>
+[48]
+<images/teltotest.jpeg, id=219, 1083.04625pt x 1262.7175pt>
 File: images/teltotest.jpeg Graphic file (type jpg)
 <use images/teltotest.jpeg>
-Package pdftex.def Info: images/teltotest.jpeg  used on input line 638.
+Package pdftex.def Info: images/teltotest.jpeg  used on input line 692.
 (pdftex.def)             Requested size: 216.60541pt x 252.53903pt.
 
-Underfull \vbox (badness 7415) has occurred while \output is active []
-
- [47]
-Underfull \hbox (badness 10000) in paragraph at lines 642--643
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
 
  []
 
-[48 <./images/teltotest.jpeg>]
+[49 <./images/teltotest.jpeg>]
 Capitolo 6.
-<images/dev.png, id=216, 404.51125pt x 279.0425pt>
+<images/dev.png, id=223, 404.51125pt x 279.0425pt>
 File: images/dev.png Graphic file (type png)
 <use images/dev.png>
-Package pdftex.def Info: images/dev.png  used on input line 657.
+Package pdftex.def Info: images/dev.png  used on input line 711.
 (pdftex.def)             Requested size: 214.38994pt x 147.89182pt.
-[49
+[50
 
- <./images/dev.png>]
-<images/geofence.png, id=222, 404.51125pt x 413.545pt>
+]
+<images/geofence.png, id=227, 404.51125pt x 413.545pt>
 File: images/geofence.png Graphic file (type png)
 <use images/geofence.png>
-Package pdftex.def Info: images/geofence.png  used on input line 664.
-(pdftex.def)             Requested size: 242.70862pt x 248.1289pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 669--671
-
- []
-
-<images/interfaccia_completa.jpg, id=223, 308.5929pt x 158.5122pt>
+Package pdftex.def Info: images/geofence.png  used on input line 718.
+(pdftex.def)             Requested size: 246.7515pt x 252.26207pt.
+<images/interfaccia_completa.jpg, id=228, 308.5929pt x 158.5122pt>
 File: images/interfaccia_completa.jpg Graphic file (type jpg)
 <use images/interfaccia_completa.jpg>
-Package pdftex.def Info: images/interfaccia_completa.jpg  used on input line 67
-2.
-(pdftex.def)             Requested size: 462.8882pt x 237.76772pt.
-
-Overfull \hbox (38.82787pt too wide) in paragraph at lines 672--672
- [] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50 <./images/geofence.png>]
-<images/reports.png, id=228, 1313.90875pt x 288.07625pt>
+Package pdftex.def Info: images/interfaccia_completa.jpg  used on input line 72
+6.
+(pdftex.def)             Requested size: 410.4281pt x 210.82098pt.
+ [51 <./images/dev.png> <./images/geofence.png>]
+<images/reports.png, id=234, 1313.90875pt x 288.07625pt>
 File: images/reports.png Graphic file (type png)
 <use images/reports.png>
-Package pdftex.def Info: images/reports.png  used on input line 680.
+Package pdftex.def Info: images/reports.png  used on input line 734.
 (pdftex.def)             Requested size: 394.17567pt x 86.42354pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--690
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
 
-Underfull \vbox (badness 4072) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
 
- [51 <./images/interfaccia_completa.jpg> <./images/reports.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ []
 
- [52]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[52 <./images/interfaccia_completa.jpg> <./images/reports.png>] [53] [54]
+[55] [56]
+Capitolo 7.
+[57
 
- [53]
-[54] [55] (./relazione.aux)
+] [58] (./relazione.aux)
 runsystem(rm relazione.pyg)...executed.
 
 runsystem(rm relazione.out.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 8856 strings out of 483172
- 152527 string characters out of 5965816
- 461376 words of memory out of 5000000
- 23633 multiletter control sequences out of 15000+600000
- 588445 words of font info for 60 fonts, out of 8000000 for 9000
+ 8863 strings out of 483172
+ 152769 string characters out of 5965816
+ 457318 words of memory out of 5000000
+ 23634 multiletter control sequences out of 15000+600000
+ 585771 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 64i,11n,102p,1835b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,11n,102p,1822b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
@@ -1002,14 +976,13 @@ e1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12
 type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
-i10.pfb>
-Output written on relazione.pdf (55 pages, 1297817 bytes).
+/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmtti10.pfb>
+Output written on relazione.pdf (59 pages, 1275577 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
+ 308 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
